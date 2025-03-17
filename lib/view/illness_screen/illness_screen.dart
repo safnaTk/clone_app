@@ -216,7 +216,7 @@ class IllnessScreen extends StatelessWidget {
                 ),
               ),
               onTap: () {
-               Navigator.pushReplacement(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => PartnersScreen()),
                 );
@@ -260,7 +260,7 @@ class IllnessScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Center(
               child: Text(
@@ -348,20 +348,31 @@ class IllnessScreen extends StatelessWidget {
               ),
             ),
             Center(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 15,
+              child: SizedBox(
+                height: 50,
+                width: 250,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorConstants.darkteal,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  textStyle: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                  child: const Text(
+                    "SUBMIT",
+                    style: TextStyle(color: ColorConstants.white),
                   ),
                 ),
-                child: const Text("SUBMIT"),
               ),
             ),
           ],
@@ -370,4 +381,3 @@ class IllnessScreen extends StatelessWidget {
     );
   }
 }
- 
